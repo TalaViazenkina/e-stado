@@ -54,6 +54,37 @@
       }
     }
   }
+
+  &--radio {
+    .question__number {
+      margin-bottom: 20px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 21px;
+      text-align: center;
+      font-size: 24px;
+      line-height: 29px;
+
+      b {
+        font-weight: 800;
+        color: $color-kelly-green;
+      }
+    }
+
+    label {
+      display: block;
+      min-width: 279px;
+      padding: 8px 13px 9px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      border: 1px dashed rgba(0, 0, 0, 0.1);
+      filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
+      border-radius: 4px;
+    }
+  }
 }
 
 .question__number {
@@ -65,4 +96,32 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: $color-default-black;
+}
+
+.question__radiobox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: $color-white-smoke-darken;
+    box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+  }
+}
+
+input:checked + .question__radiobox::before {
+  background: linear-gradient(180deg, $color-drover2 0%, $color-dandelion2 100%);
 }

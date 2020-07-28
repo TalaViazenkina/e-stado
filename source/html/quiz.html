@@ -56,10 +56,10 @@
         <form action="#" method="post">
           <div class="quiz-form__progress">
             <div class="quiz-form__progress-step quiz-form__progress-step--done"></div>
-            <div class="quiz-form__progress-step"></div>
-            <div class="quiz-form__progress-step"></div>
+            <div class="quiz-form__progress-step quiz-form__progress-step--done"></div>
+            <div class="quiz-form__progress-step quiz-form__progress-step--done"></div>
           </div>
-          <div class="quiz-form__question question question--number question--show">
+          <div class="quiz-form__question question question--number">
             <span class="question__number">Вопрос 1</span>
             <label for="cow-quality">Сколько у вас <b>дойных коров?</b></label>
             <input id="cow-quality" type="number" name="cow-quality" min="0" placeholder="Например: 45">
@@ -79,24 +79,26 @@
               </svg>
             </button>
           </div>
-          <div class="quiz-form__question question question--radio">
+          <div class="quiz-form__question question question--radio question--show">
             <span class="question__number">Вопрос 3</span>
             <p><b>Вы являетесь?</b></p>
-            <label>
-              <input type="radio" name="user" value="leader">
-              <span class="question__radiobox"></span>
-              Руководителем фермы
-            </label>
-            <label>
-              <input type="radio" name="user" value="zootechnician">
-              <span class="question__radiobox"></span>
-              Зоотехником
-            </label>
-            <label>
-              <input type="radio" name="user" value="veterinarian">
-              <span class="question__radiobox"></span>
-              Ветеренаром
-            </label>
+            <div class="question__answer-list">
+              <label>
+                <input class="visually-hidden" type="radio" name="user" value="leader" checked>
+                <span class="question__radiobox"></span>
+                Руководителем фермы
+              </label>
+              <label>
+                <input class="visually-hidden" type="radio" name="user" value="zootechnician">
+                <span class="question__radiobox"></span>
+                Зоотехником
+              </label>
+              <label>
+                <input class="visually-hidden" type="radio" name="user" value="veterinarian">
+                <span class="question__radiobox"></span>
+                Ветеренаром
+              </label>
+            </div>
             <button class="button quiz-form__button" type="button">Далее
               <svg width="9" height="16" focusable="false">
                 <use xlink:href="img/sprite_auto.svg#icon-cover"></use>

@@ -596,6 +596,29 @@ img {
       color: rgba(0, 0, 0, 0.45); }
     .question--number input:-ms-input-placeholder {
       ccolor: rgba(0, 0, 0, 0.45); }
+  .question--radio .question__number {
+    margin-bottom: 20px; }
+  .question--radio p {
+    margin-top: 0;
+    margin-bottom: 21px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 29px; }
+    .question--radio p b {
+      font-weight: 800;
+      color: #50b520; }
+  .question--radio label {
+    display: block;
+    min-width: 279px;
+    padding: 8px 13px 9px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+    -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
+            filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
+    border-radius: 4px; }
 
 .question__number {
   display: block;
@@ -606,6 +629,33 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #000000; }
+
+.question__radiobox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+          box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16); }
+  .question__radiobox::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: #f2f2f2;
+    -webkit-box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+            box-shadow: inset 0px 10px 20px rgba(255, 255, 255, 0.16);
+    border-radius: 50%; }
+
+input:checked + .question__radiobox::before {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fee9a1), to(#ffdd64));
+  background: linear-gradient(180deg, #fee9a1 0%, #ffdd64 100%); }
 
 .quiz {
   position: relative;
@@ -664,6 +714,7 @@ img {
 
 .quiz-form {
   padding: 10px 9px 7px;
+  margin-bottom: 30px;
   background: #ffffff;
   -webkit-box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
           box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
