@@ -1,0 +1,59 @@
+.quiz {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //width: 100%;
+  min-height: 100vh;
+  padding-top: 23px;
+  overflow: hidden;
+
+  background-image: url("../img/bg@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include retina {
+    background-image: url("../img/bg@2x.jpg");
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 953px;
+    height: 689px;
+    transform: translateX(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg width='1453' height='940' viewBox='0 0 1453 940' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f)'%3E%3Cellipse cx='726.5' cy='345.5' rx='476.5' ry='344.5' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f' x='0' y='-249' width='1453' height='1189' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='125' result='effect1_foregroundBlur'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1453px 940px;
+    filter: blur(250px);
+  }
+}
+
+.qiuz__info {
+  position: relative;
+  p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+
+  h2 {
+    margin: 0 auto 25px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+    max-width: 415px;
+
+    b {
+      font-weight: 800;
+      color: $color-kelly-green;
+    }
+  }
+}
