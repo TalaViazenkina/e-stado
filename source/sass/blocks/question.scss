@@ -50,7 +50,7 @@
       }
 
       &:-ms-input-placeholder {
-        ccolor: rgba(0, 0, 0, 0.45);
+        color: rgba(0, 0, 0, 0.45);
       }
     }
   }
@@ -59,6 +59,7 @@
     .question__number {
       margin-bottom: 20px;
     }
+
     p {
       margin-top: 0;
       margin-bottom: 21px;
@@ -72,7 +73,7 @@
       }
     }
 
-    label {
+    .question__answer-list label {
       display: block;
       min-width: 279px;
       padding: 8px 13px 9px;
@@ -84,6 +85,103 @@
       filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
       border-radius: 4px;
     }
+  }
+
+  &--personal {
+    padding-top: 22px;
+
+    p {
+      margin-bottom: 33px;
+    }
+
+    .question__answer-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 520px;
+      padding-bottom: 70px;
+    }
+
+    .question__answer-list label {
+      min-width: 160px;
+      margin: 5px;
+      padding: 6px 13px;
+      font-size: 15px;
+      line-height: 26px;
+    }
+
+    .question__personal-data {
+      max-width: 307px;
+      margin-right: 40px;
+
+      label {
+        display: block;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 15px;
+        color: rgba($color-nero, 0.5);
+      }
+
+      input {
+        @include field-reset;
+        display: block;
+        height: 48px;
+        padding: 8px 0;
+
+        color: $color-default-black;
+      }
+
+      &--phone {
+        input {
+          font-size: 20px;
+          line-height: 32px;
+
+          &::-webkit-input-placeholder {
+            color: $color-default-black;
+          }
+
+          &::-moz-placeholder {
+            color: $color-default-black;
+          }
+
+          &:-ms-input-placeholder {
+            color: $color-default-black;
+          }
+        }
+      }
+
+      &--email {
+        input {
+          font-size: 18px;
+          line-height: 32px;
+
+          &::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.14);
+          }
+
+          &::-moz-placeholder {
+            color: rgba(0, 0, 0, 0.14);
+          }
+
+          &:-ms-input-placeholder {
+            color: rgba(0, 0, 0, 0.14);
+          }
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    width: 1275px;
+    height: 704px;
+    background-image: url("../img/bg-cow@1x.png");
+    background-repeat: no-repeat;
+    background-position: right 0 top 0;
+    background-size: 100% 100%;
   }
 }
 
@@ -122,6 +220,6 @@
   }
 }
 
-input:checked + .question__radiobox::before {
+input:checked+.question__radiobox::before {
   background: linear-gradient(180deg, $color-drover2 0%, $color-dandelion2 100%);
 }

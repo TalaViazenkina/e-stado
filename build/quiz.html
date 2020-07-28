@@ -91,7 +91,7 @@
               </svg>
             </button>
           </div>
-          <div class="quiz-form__question question question--radio question--show">
+          <div class="quiz-form__question question question--radio">
             <span class="question__number">Вопрос 3</span>
             <p><b>Вы являетесь?</b></p>
             <div class="question__answer-list">
@@ -117,44 +117,46 @@
               </svg>
             </button>
           </div>
-          <div class="quiz-form__personal">
+          <div class="quiz-form__question question question--radio question--personal question--show">
             <p><b>Куда прислать вам ответ?</b></p>
-            <label>
-              <input type="radio" name="contact" value="phone">
-              <span class="question__radiobox"></span>
-              По телефону
-            </label>
-            <label>
-              <input type="radio" name="contact" value="email">
-              <span class="question__radiobox"></span>
-              E-mail
-            </label>
-            <label>
-              <input type="radio" name="contact" value="Viber">
-              <span class="question__radiobox"></span>
-              Viber
-            </label>
-            <label>
-              <input type="radio" name="contact" value="Telegram ">
-              <span class="question__radiobox"></span>
-              Telegram
-            </label>
-            <label>
-              <input type="radio" name="contact" value="Whatsaap">
-              <span class="question__radiobox"></span>
-              Whatsaap
-            </label>
-            <div class="quiz-form__personal-data quiz-form__personal-data--phone">
-              <label>Введите ваш номер телефона
-                <input type="phone" name="tel">
+            <div class="question__answer-list">
+              <label>
+                <input class="visually-hidden" type="radio" name="contact" value="phone" checked>
+                <span class="question__radiobox"></span>
+                По телефону
+              </label>
+              <label>
+                <input class="visually-hidden" type="radio" name="contact" value="email">
+                <span class="question__radiobox"></span>
+                E-mail
+              </label>
+              <label>
+                <input class="visually-hidden" type="radio" name="contact" value="Viber">
+                <span class="question__radiobox"></span>
+                Viber
+              </label>
+              <label>
+                <input class="visually-hidden" type="radio" name="contact" value="Telegram ">
+                <span class="question__radiobox"></span>
+                Telegram
+              </label>
+              <label>
+                <input class="visually-hidden" type="radio" name="contact" value="Whatsaap">
+                <span class="question__radiobox"></span>
+                Whatsaap
               </label>
             </div>
-            <div class="quiz-form__personal-data quiz-form__personal-data--phone">
+            <div class="question__personal-data question__personal-data--phone  hidden">
+              <label>Введите ваш номер телефона
+                <input type="tel" name="tel" placeholder="+375  ( _ _ ) _ _ _-_ _-_ _">
+              </label>
+            </div>
+            <div class="question__personal-data question__personal-data--email">
               <label>Введите ваш e-mail
                 <input type="email" name="email" placeholder="simple@example.com">
               </label>
             </div>
-            <button class="button quiz-form__button" type="submit">Отправить и получить ответ</button>
+            <button class="button button--lg quiz-form__button" type="submit">Отправить и получить ответ</button>
           </div>
         </form>
       </div>

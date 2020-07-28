@@ -435,6 +435,12 @@ img {
     width: 100%;
     background: #e8c240;
     border-radius: 52px; }
+  .button--lg {
+    padding-top: 23px;
+    padding-bottom: 28px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px; }
 
 .header {
   position: relative;
@@ -595,7 +601,7 @@ img {
     .question--number input::-moz-placeholder {
       color: rgba(0, 0, 0, 0.45); }
     .question--number input:-ms-input-placeholder {
-      ccolor: rgba(0, 0, 0, 0.45); }
+      color: rgba(0, 0, 0, 0.45); }
   .question--radio .question__number {
     margin-bottom: 20px; }
   .question--radio p {
@@ -607,7 +613,7 @@ img {
     .question--radio p b {
       font-weight: 800;
       color: #50b520; }
-  .question--radio label {
+  .question--radio .question__answer-list label {
     display: block;
     min-width: 279px;
     padding: 8px 13px 9px;
@@ -619,6 +625,79 @@ img {
     -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
             filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
     border-radius: 4px; }
+  .question--personal {
+    padding-top: 22px; }
+    .question--personal p {
+      margin-bottom: 33px; }
+    .question--personal .question__answer-list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      max-width: 520px;
+      padding-bottom: 70px; }
+    .question--personal .question__answer-list label {
+      min-width: 160px;
+      margin: 5px;
+      padding: 6px 13px;
+      font-size: 15px;
+      line-height: 26px; }
+    .question--personal .question__personal-data {
+      max-width: 307px;
+      margin-right: 40px; }
+      .question--personal .question__personal-data label {
+        display: block;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 15px;
+        color: rgba(36, 36, 36, 0.5); }
+      .question--personal .question__personal-data input {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        display: block;
+        height: 48px;
+        padding: 8px 0;
+        color: #000000; }
+      .question--personal .question__personal-data--phone input {
+        font-size: 20px;
+        line-height: 32px; }
+        .question--personal .question__personal-data--phone input::-webkit-input-placeholder {
+          color: #000000; }
+        .question--personal .question__personal-data--phone input::-moz-placeholder {
+          color: #000000; }
+        .question--personal .question__personal-data--phone input:-ms-input-placeholder {
+          color: #000000; }
+      .question--personal .question__personal-data--email input {
+        font-size: 18px;
+        line-height: 32px; }
+        .question--personal .question__personal-data--email input::-webkit-input-placeholder {
+          color: rgba(0, 0, 0, 0.14); }
+        .question--personal .question__personal-data--email input::-moz-placeholder {
+          color: rgba(0, 0, 0, 0.14); }
+        .question--personal .question__personal-data--email input:-ms-input-placeholder {
+          color: rgba(0, 0, 0, 0.14); }
+  .question::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    width: 1275px;
+    height: 704px;
+    background-image: url("../img/bg-cow@1x.png");
+    background-repeat: no-repeat;
+    background-position: right 0 top 0;
+    background-size: 100% 100%; }
 
 .question__number {
   display: block;
@@ -691,6 +770,8 @@ input:checked + .question__radiobox::before {
     background-size: 1453px 940px;
     -webkit-filter: blur(250px);
             filter: blur(250px); }
+  .quiz .main {
+    padding-bottom: 80px; }
 
 .qiuz__info {
   position: relative; }
