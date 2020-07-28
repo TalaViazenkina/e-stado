@@ -548,6 +548,7 @@ img {
   font-weight: 800; }
 
 .question {
+  position: relative;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -690,14 +691,18 @@ img {
   .question::after {
     content: "";
     position: absolute;
-    right: 50%;
-    bottom: 0;
+    right: calc(50% - 105px);
+    bottom: -124px;
     width: 1275px;
     height: 704px;
     background-image: url("../img/bg-cow@1x.png");
     background-repeat: no-repeat;
-    background-position: right 0 top 0;
-    background-size: 100% 100%; }
+    background-position: right 0 bottom 0;
+    background-size: 1275px 704px;
+    pointer-events: none; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      .question::after {
+        background-image: url("../img/bg-cow@2x.png"); } }
 
 .question__number {
   display: block;
@@ -771,7 +776,7 @@ input:checked + .question__radiobox::before {
     -webkit-filter: blur(250px);
             filter: blur(250px); }
   .quiz .main {
-    padding-bottom: 80px; }
+    padding-bottom: 87px; }
 
 .qiuz__info {
   position: relative; }
