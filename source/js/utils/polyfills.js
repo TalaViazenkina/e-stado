@@ -2,7 +2,7 @@
 const polyfills = () => {
   // forEach
   if (window.NodeList && !NodeList.prototype.forEach) {
-    NodeList.prototype.forEach = function (callback, thisArg) {
+    NodeList.prototype.forEach = function(callback, thisArg) {
       thisArg = thisArg || window;
       for (let i = 0; i < this.length; i++) {
         callback.call(thisArg, this[i], i, this);
@@ -55,7 +55,7 @@ const polyfills = () => {
       Element.prototype.msMatchesSelector ||
       Element.prototype.oMatchesSelector ||
       Element.prototype.webkitMatchesSelector ||
-      function (s) {
+      function(s) {
         let matches = (this.document || this.ownerDocument).querySelectorAll(s);
         let i = matches.length;
         // eslint-disable-next-line no-empty
@@ -72,7 +72,7 @@ const polyfills = () => {
   }
 
   if (!Element.prototype.closest) {
-    Element.prototype.closest = function (s) {
+    Element.prototype.closest = function(s) {
       let el = this;
 
       do {
@@ -86,8 +86,8 @@ const polyfills = () => {
   }
 
   // prepend
-  (function (arr) {
-    arr.forEach(function (item) {
+  (function(arr) {
+    arr.forEach(function(item) {
       if (item.hasOwnProperty(`prepend`)) {
         return;
       }
@@ -100,7 +100,7 @@ const polyfills = () => {
           let argArr = Array.prototype.slice.call(arguments);
           let docFrag = document.createDocumentFragment();
 
-          argArr.forEach(function (argItem) {
+          argArr.forEach(function(argItem) {
             let isNode = argItem instanceof Node;
             docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
           });
@@ -112,8 +112,8 @@ const polyfills = () => {
   })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
   // append
-  (function (arr) {
-    arr.forEach(function (item) {
+  (function(arr) {
+    arr.forEach(function(item) {
       if (item.hasOwnProperty(`append`)) {
         return;
       }
@@ -126,7 +126,7 @@ const polyfills = () => {
           let argArr = Array.prototype.slice.call(arguments);
           let docFrag = document.createDocumentFragment();
 
-          argArr.forEach(function (argItem) {
+          argArr.forEach(function(argItem) {
             let isNode = argItem instanceof Node;
             docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
           });
@@ -138,8 +138,8 @@ const polyfills = () => {
   })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
   // before
-  (function (arr) {
-    arr.forEach(function (item) {
+  (function(arr) {
+    arr.forEach(function(item) {
       if (item.hasOwnProperty(`before`)) {
         return;
       }
@@ -152,7 +152,7 @@ const polyfills = () => {
           let argArr = Array.prototype.slice.call(arguments);
           let docFrag = document.createDocumentFragment();
 
-          argArr.forEach(function (argItem) {
+          argArr.forEach(function(argItem) {
             let isNode = argItem instanceof Node;
             docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
           });
@@ -164,8 +164,8 @@ const polyfills = () => {
   })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
   // remove
-  (function (arr) {
-    arr.forEach(function (item) {
+  (function(arr) {
+    arr.forEach(function(item) {
       if (item.hasOwnProperty(`remove`)) {
         return;
       }
@@ -227,6 +227,39 @@ const polyfills = () => {
       });
     }
   }
+
+  //assign
+  if (!Object.assign) {
+    Object.defineProperty(Object, 'assign', {
+      enumerable: false,
+      configurable: true,
+      writable: true,
+      value: function(target, firstSource) {
+        'use strict';
+        if (target === undefined || target === null) {
+          throw new TypeError('Cannot convert first argument to object');
+        }
+
+        var to = Object(target);
+        for (var i = 1; i < arguments.length; i++) {
+          var nextSource = arguments[i];
+          if (nextSource === undefined || nextSource === null) {
+            continue;
+          }
+
+          var keysArray = Object.keys(Object(nextSource));
+          for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
+            var nextKey = keysArray[nextIndex];
+            var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+            if (desc !== undefined && desc.enumerable) {
+              to[nextKey] = nextSource[nextKey];
+            }
+          }
+        }
+        return to;
+      }
+    });
+  }
 };
 
-export {polyfills};
+export { polyfills };
