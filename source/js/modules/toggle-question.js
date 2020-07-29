@@ -48,7 +48,7 @@ export default () => {
     }
   }
 
-  function toggleContactData(item) {
+  function toggleContactData(item, submitButton) {
     const inputRadioList = item.querySelectorAll('.question__answer-list input');
     const phoneBlock = item.querySelector('.question__personal-data--phone');
     const emailBlock = item.querySelector('.question__personal-data--email');
@@ -56,13 +56,24 @@ export default () => {
       return;
     }
 
+    const phoneInput = phoneBlock.querySelector('input');
+    const emailInput = emailBlock.querySelector('input');
+
     inputRadioList.forEach((input) => input.addEventListener('change', function() {
       if (input.checked) {
         if (input.value === 'email') {
           phoneBlock.classList.add('hidden');
+          if (phoneInput.value) {
+            phoneInput.value = null;
+            submitButton.disabled = true;
+          }
           emailBlock.classList.remove('hidden');
         } else {
           emailBlock.classList.add('hidden');
+          if (emailInput.value) {
+            emailInput.value = null;
+            submitButton.disabled = true;
+          }
           phoneBlock.classList.remove('hidden');
         }
       }
@@ -80,7 +91,7 @@ export default () => {
       const inputTextList = item.querySelectorAll('.question__personal-data input');
       changeDisabled(submitButton, inputTextList);
 
-      toggleContactData(item);
+      toggleContactData(item, submitButton);
 
     }
   });
