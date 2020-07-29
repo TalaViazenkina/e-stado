@@ -7,6 +7,9 @@
 </head>
 
 <body>
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
   <div class="quiz">
     <header class="header">
       <a class="header__logo" href="#">
@@ -23,7 +26,7 @@
           <li class="methods__item">
             <span class="methods__icon">
               <svg width="20" height="20" focusable="false">
-                <use xlink:href="img/sprite_auto.svg#icon-smart"></use>
+                <use xlink:href="#icon-smart"></use>
               </svg>
             </span>
             <span class="methods__text">
@@ -33,7 +36,7 @@
           <li class="methods__item">
             <span class="methods__icon">
               <svg width="20" height="20" focusable="false">
-                <use xlink:href="img/sprite_auto.svg#icon-smart"></use>
+                <use xlink:href="#icon-smart"></use>
               </svg>
             </span>
             <span class="methods__text">
@@ -43,7 +46,7 @@
           <li class="methods__item">
             <span class="methods__icon">
               <svg width="20" height="20" focusable="false">
-                <use xlink:href="img/sprite_auto.svg#icon-smart"></use>
+                <use xlink:href="#icon-smart"></use>
               </svg>
             </span>
             <span class="methods__text">
@@ -65,7 +68,7 @@
             <input id="cow-quality" type="number" name="cow-quality" min="0" placeholder="Например: 45">
             <button class="button quiz-form__button" type="button" disabled>Далее
               <svg width="9" height="16" focusable="false">
-                <use xlink:href="img/sprite_auto.svg#icon-cover"></use>
+                <use xlink:href="#icon-cover"></use>
               </svg>
             </button>
           </div>
@@ -75,7 +78,7 @@
             <input id="milk-quality" type="number" name="milk-quality" min="0" placeholder="Например: 12">
             <button class="button quiz-form__button" type="button" disabled>Далее
               <svg width="9" height="16" focusable="false">
-                <use xlink:href="img/sprite_auto.svg#icon-cover"></use>
+                <use xlink:href="#icon-cover"></use>
               </svg>
             </button>
           </div>
@@ -101,7 +104,7 @@
             </div>
             <button class="button quiz-form__button" type="button" disabled>Далее
               <svg width="9" height="16" focusable="false">
-                <use xlink:href="img/sprite_auto.svg#icon-cover"></use>
+                <use xlink:href="#icon-cover"></use>
               </svg>
             </button>
           </div>
@@ -150,7 +153,6 @@
       </div>
     </main>
   </div>
-
   <script src="js/main.min.js"></script>
 </body>
 
