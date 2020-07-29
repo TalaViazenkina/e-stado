@@ -2,13 +2,14 @@
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 62px 0 50px;
+  padding: 40px 0 72px;
 }
 
 .header__logo {
   @include transition(opacity);
-  display: flex;
   align-items: flex-end;
+  display: flex;
+  padding-left: 10px;
   font-weight: 300;
   font-size: 13px;
   line-height: 18px;
