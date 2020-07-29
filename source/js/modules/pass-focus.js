@@ -14,5 +14,4 @@ export default () => {
   }
 
   labelList.forEach((label) => passFocus(label));
-
 }
