@@ -65,6 +65,7 @@ export default () => {
           phoneBlock.classList.add('hidden');
           if (phoneInput.value) {
             phoneInput.value = null;
+            phoneInput.parentNode.classList.remove('invalid');
             submitButton.disabled = true;
           }
           emailBlock.classList.remove('hidden');
@@ -72,6 +73,7 @@ export default () => {
           emailBlock.classList.add('hidden');
           if (emailInput.value) {
             emailInput.value = null;
+            emailInput.parentNode.classList.remove('invalid');
             submitButton.disabled = true;
           }
           phoneBlock.classList.remove('hidden');

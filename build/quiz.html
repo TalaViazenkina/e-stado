@@ -83,7 +83,7 @@
         </ul>
       </div>
       <div class="quiz__content quiz-form">
-        <form action="#" method="post">
+        <form action="#" method="post" novalidate>
           <div class="quiz-form__progress">
             <div class="quiz-form__progress-step"></div>
             <div class="quiz-form__progress-step"></div>
@@ -168,11 +168,13 @@
               <label>Введите ваш номер телефона
                 <input type="tel" name="tel" placeholder="+375  ( _ _ ) _ _ _-_ _-_ _">
               </label>
+              <span class="question__error">Ошибка! Попробуйте еще</span>
             </div>
             <div class="question__personal-data question__personal-data--email  hidden">
               <label>Введите ваш e-mail
                 <input type="email" name="email" placeholder="simple@example.com">
               </label>
+              <span class="question__error">Ошибка! Попробуйте еще</span>
             </div>
             <button class="button button--lg quiz-form__button" type="submit" disabled>Отправить и получить ответ</button>
           </div>

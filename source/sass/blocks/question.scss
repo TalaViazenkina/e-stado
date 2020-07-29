@@ -124,77 +124,6 @@
       font-size: 15px;
       line-height: 26px;
     }
-
-    .question__personal-data {
-      width: 307px;
-
-      label {
-        @include transition(border);
-        display: block;
-        padding: 17px 24px 10px;
-        font-weight: 300;
-        font-size: 13px;
-        line-height: 15px;
-        color: rgba($color-nero, 0.5);
-        background-color: rgba(250, 250, 250, 0.62);
-        border: 1px solid rgba(250, 250, 250, 0.62);
-        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.01);
-        border-radius: 4px;
-
-        &:hover,
-        &.focused {
-          outline: none;
-          border: 1px solid $color-dandelion3;
-        }
-      }
-
-      input {
-        @include field-reset;
-        display: block;
-        height: 48px;
-        padding: 8px 0;
-
-        color: $color-default-black;
-      }
-
-      &--phone {
-        input {
-          font-size: 20px;
-          line-height: 32px;
-
-          &::-webkit-input-placeholder {
-            color: $color-default-black;
-          }
-
-          &::-moz-placeholder {
-            color: $color-default-black;
-          }
-
-          &:-ms-input-placeholder {
-            color: $color-default-black;
-          }
-        }
-      }
-
-      &--email {
-        input {
-          font-size: 18px;
-          line-height: 32px;
-
-          &::-webkit-input-placeholder {
-            color: rgba(0, 0, 0, 0.14);
-          }
-
-          &::-moz-placeholder {
-            color: rgba(0, 0, 0, 0.14);
-          }
-
-          &:-ms-input-placeholder {
-            color: rgba(0, 0, 0, 0.14);
-          }
-        }
-      }
-    }
   }
 
   &::after {
@@ -254,3 +183,102 @@
 input:checked+.question__radiobox::before {
   background: linear-gradient(180deg, $color-drover2 0%, $color-dandelion2 100%);
 }
+
+.question__personal-data {
+  position: relative;
+  width: 307px;
+
+  label {
+    @include transition(border);
+    display: block;
+    padding: 17px 24px 10px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba($color-nero, 0.5);
+    background-color: rgba(250, 250, 250, 0.62);
+    border: 1px solid rgba(250, 250, 250, 0.62);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.01);
+    border-radius: 4px;
+
+    &:hover,
+    &.focused {
+      outline: none;
+      border: 1px solid $color-dandelion3;
+    }
+
+    &.invalid {
+      border-color: $color-error;
+
+      input {
+        opacity: 0;
+      }
+    }
+  }
+
+  input {
+    @include field-reset;
+    display: block;
+    height: 48px;
+    padding: 8px 0;
+
+    color: $color-default-black;
+  }
+
+  &--phone {
+    input {
+      font-size: 20px;
+      line-height: 32px;
+
+      &::-webkit-input-placeholder {
+        color: $color-default-black;
+      }
+
+      &::-moz-placeholder {
+        color: $color-default-black;
+      }
+
+      &:-ms-input-placeholder {
+        color: $color-default-black;
+      }
+    }
+  }
+
+  &--email {
+    input {
+      font-size: 18px;
+      line-height: 32px;
+
+      &::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.14);
+      }
+
+      &::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.14);
+      }
+
+      &:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.14);
+      }
+    }
+  }
+}
+
+.question__error {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 17px 13px 17px 24px;
+  font-size: 20px;
+  line-height: 32px;
+  color: $color-error;
+  pointer-events: none;
+}
+
+label.invalid + .question__error {
+  display: block;
+}
+
+
