@@ -33,13 +33,15 @@
 
     input {
       @include field-reset;
+      @include transition(background-color, border);
       width: 210px;
       height: 61px;
-      padding: 20px 20px 21px;
+      padding: 19px 20px 20px;
       font-size: 16px;
       line-height: 20px;
-      background: $color-white-smoke-dark;
-      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.02);
+      background-color: $color-white-smoke-dark;
+      border: 1px solid $color-white-smoke-dark;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.02);
       border-radius: 4px;
 
       &::-webkit-input-placeholder {
@@ -52,6 +54,12 @@
 
       &:-ms-input-placeholder {
         color: rgba(0, 0, 0, 0.45);
+      }
+
+      &:hover,
+      &:focus {
+        background-color: rgba(250, 250, 250, 0.62);
+        border: 1px solid $color-dandelion3;
       }
     }
   }
@@ -75,6 +83,7 @@
     }
 
     .question__answer-list label {
+      @include transition(border);
       display: block;
       min-width: 279px;
       padding: 8px 13px 9px;
@@ -85,6 +94,11 @@
       border: 1px dashed rgba(0, 0, 0, 0.1);
       filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
       border-radius: 4px;
+
+      &:hover,
+      &.focused {
+        border-color: $color-dandelion3;
+      }
     }
   }
 
@@ -100,7 +114,7 @@
       flex-wrap: wrap;
       justify-content: center;
       max-width: 520px;
-      padding-bottom: 70px;
+      padding-bottom: 30px;
     }
 
     .question__answer-list label {
@@ -112,15 +126,26 @@
     }
 
     .question__personal-data {
-      max-width: 307px;
-      margin-right: 40px;
+      width: 307px;
 
       label {
+        @include transition(border);
         display: block;
+        padding: 17px 24px 10px;
         font-weight: 300;
         font-size: 13px;
         line-height: 15px;
         color: rgba($color-nero, 0.5);
+        background-color: rgba(250, 250, 250, 0.62);
+        border: 1px solid rgba(250, 250, 250, 0.62);
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.01);
+        border-radius: 4px;
+
+        &:hover,
+        &.focused {
+          outline: none;
+          border: 1px solid $color-dandelion3;
+        }
       }
 
       input {

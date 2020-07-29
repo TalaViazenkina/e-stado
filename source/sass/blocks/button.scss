@@ -1,11 +1,12 @@
 .button {
   @include button-reset;
+  @include transition(opacity);
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 19px 45px;
+  padding: 19px 41px;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -20,12 +21,13 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: linear-gradient(98.61deg, $color-dandelion 5.19%, $color-drover 49.97%, $color-dandelion 95.49%);
+    background-image: linear-gradient(98.61deg, $color-dandelion 5.19%, $color-drover 49.97%, $color-dandelion 95.49%);
     box-shadow: inset 0 0 26px rgba(255, 255, 255, 0.54);
     border-radius: 52px;
   }
 
   &::before {
+    @include transition(background-color, box-shadow);
     content: "";
     position: absolute;
     left: 0;
@@ -33,15 +35,32 @@
     bottom: -3px;
     z-index: -1;
     width: 100%;
-    background: $color-festival;
+    background-color: $color-festival;
     border-radius: 52px;
   }
 
   &--lg {
-    padding-top: 23px;
-    padding-bottom: 28px;
+    padding: 23px 45px 28px;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      background-image: linear-gradient(104.34deg, $color-turbo -1.99%, $color-buff 52.26%, $color-turbo 107.41%);
+    }
+
+    &::before {
+      background-color: $color-golden-sand;
+      box-shadow: 0 10px 30px rgba(255, 221, 101, 0.6),
+        inset 0 10px 20px rgba(255, 255, 255, 0.16);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.8;
   }
 }
